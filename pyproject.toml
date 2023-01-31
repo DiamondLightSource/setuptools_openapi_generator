@@ -36,8 +36,6 @@ dev = [
     "types-mock",
 ]
 
-[project.scripts]
-setuptools_openapi_generator = "setuptools_openapi_generator.__main__:main"
 
 [project.urls]
 GitHub = "https://github.com/garryod/setuptools_openapi_generator"
