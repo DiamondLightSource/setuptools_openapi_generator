@@ -10,7 +10,8 @@ def test_load_config_from_toml():
         library=HTTPLibrary.httpx,
         basedir=Path("src/sample_project/apis/"),
         sources={
-            Path("api_definitions/link-example.json"),
-            Path("api_definitions/petstore.json"),
+            "https://raw.githubusercontent.com"
+            "/OAI/OpenAPI-Specification/main/examples/v3.0/link-example.json",
+            "api_definitions/petstore.json",
         },
     ) == Configuration.from_toml(toml_path="tests/sample_project/pyproject.toml")

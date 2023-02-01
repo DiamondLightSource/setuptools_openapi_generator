@@ -23,7 +23,10 @@ Client generation can be configured via a `tool` entry in the `pyproject.toml` a
     [tool.setuptools_openapi_generator]
     library = "httpx"
     basedir = "src/sample_project/apis/"
-    sources = ["api_definitions/link-example.json", "api_definitions/petstore.json"]
+    sources = [
+        "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/link-example.json",
+        "api_definitions/petstore.json"
+    ]
     
 The above example will generate two API clients, at `src/sample_project/apis/link_example`
 and src/sample_project/apis/petstore" respectively.

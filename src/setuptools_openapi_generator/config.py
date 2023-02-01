@@ -24,7 +24,7 @@ def lazy_toml_load(data: str) -> Dict[str, Any]:
 class Configuration(BaseModel):
     library: HTTPLibrary
     basedir: Path
-    sources: Set[Path]
+    sources: Set[str]
 
     @classmethod
     def from_toml(

@@ -80,6 +80,7 @@ addopts = """
 filterwarnings = "error"
 # Doctest python code in docs, python code in src docstrings, test functions in tests
 testpaths = "docs src tests"
+norecursedirs = "tests/sample_project"
 
 [tool.coverage.run]
 data_file = "/tmp/setuptools_openapi_generator.coverage"
