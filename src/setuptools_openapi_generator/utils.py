@@ -7,4 +7,4 @@ def get_name(path: str) -> str:
 
 
 def clean_name(name: str) -> str:
-    return sub("[^0-9a-zA-Z_]", "_", name)
+    return sub("^[^a-zA-Z]|[^0-9a-zA-Z]", "_", name)
