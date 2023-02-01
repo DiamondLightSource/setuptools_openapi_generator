@@ -13,6 +13,21 @@ Documentation  https://garryod.github.io/setuptools_openapi_generator
 Releases       https://github.com/garryod/setuptools_openapi_generator/releases
 ============== ==============================================================
 
+To generate an API client in your project, simply add `setuptools_openapi_generator`
+to the `build-system.requires` section of your `pyproject.toml`. 
+
+Client generation can be configured via a `tool` entry in the `pyproject.toml` as below:
+
+.. code-block:: toml
+
+    [tool.setuptools_openapi_generator]
+    library = "httpx"
+    basedir = "src/sample_project/apis/"
+    sources = ["api_definitions/link-example.json", "api_definitions/petstore.json"]
+    
+The above example will generate two API clients, at `src/sample_project/apis/link_example`
+and src/sample_project/apis/petstore" respectively.
+
 .. |code_ci| image:: https://github.com/garryod/setuptools_openapi_generator/actions/workflows/code.yml/badge.svg?branch=main
     :target: https://github.com/garryod/setuptools_openapi_generator/actions/workflows/code.yml
     :alt: Code CI
