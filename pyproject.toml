@@ -13,7 +13,10 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 ]
 description = "A setuptools extension for generating OpenAPI clients"
-dependencies = []
+dependencies = [
+    "openapi-python-generator",
+    "tomli>=1.0.0;python_version < '3.11'",
+]
 dynamic = ["version"]
 license.file = "LICENSE"
 readme = "README.rst"
@@ -36,6 +39,8 @@ dev = [
     "types-mock",
 ]
 
+[project.entry-points."setuptools.finalize_distribution_options"]
+setuptools_openapi_generator = "setuptools_openapi_generator.integration:generate_clients"
 
 [project.urls]
 GitHub = "https://github.com/garryod/setuptools_openapi_generator"
@@ -49,6 +54,7 @@ write_to = "src/setuptools_openapi_generator/_version.py"
 
 [tool.mypy]
 ignore_missing_imports = true # Ignore missing stubs in imported modules
+plugins = ["pydantic.mypy"]
 
 [tool.isort]
 float_to_top = true
