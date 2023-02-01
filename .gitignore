@@ -67,3 +67,5 @@ venv*
 # further build artifacts
 lockfiles/
 
+# generated test api
+tests/sample_project/src/sample_project/apis
