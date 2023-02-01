@@ -1,14 +1,7 @@
 // For format details, see https://containers.dev/implementors/json_reference/
 {
     "name": "Setuptools OpenAPI Generator 3 Developer Container",
-    "build": {
-        "dockerfile": "../Dockerfile",
-        "target": "build",
-        // Only upgrade pip, we will install the project below
-        "args": {
-            "PIP_OPTIONS": "--upgrade pip"
-        }
-    },
+    "image": "python:3.11",
     "remoteEnv": {
         "DISPLAY": "${localEnv:DISPLAY}"
     },
