@@ -27,11 +27,7 @@ dev = [
     "Flake8-pyproject",
     "pipdeptree",
     "pre-commit",
-    "pydata-sphinx-theme>=0.12",
     "pytest-cov",
-    "sphinx-autobuild",
-    "sphinx-copybutton",
-    "sphinx-design",
     "tox-direct",
     "types-mock",
 ]
@@ -75,8 +71,8 @@ addopts = """
     """
 # https://iscinumpy.gitlab.io/post/bound-version-constraints/#watch-for-warnings
 filterwarnings = "error"
-# Doctest python code in docs, python code in src docstrings, test functions in tests
-testpaths = "docs src tests"
+# Doctest python code in python code in src docstrings, test functions in tests
+testpaths = "src tests"
 norecursedirs = "tests/sample_project"
 
 [tool.coverage.run]
@@ -93,7 +89,7 @@ legacy_tox_ini = """
 [tox]
 skipsdist=True
 
-[testenv:{pre-commit,mypy,pytest,docs}]
+[testenv:{pre-commit,mypy,pytest}]
 # Don't create a virtualenv for the command, requires tox-direct plugin
 direct = True
 passenv = *
@@ -107,5 +103,4 @@ commands =
     pytest: pytest {posargs}
     mypy: mypy src tests {posargs}
     pre-commit: pre-commit run --all-files {posargs}
-    docs: sphinx-{posargs:build -EW --keep-going} -T docs build/html
 """
