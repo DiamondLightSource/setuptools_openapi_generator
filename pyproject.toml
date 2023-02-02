@@ -36,7 +36,7 @@ dev = [
 setuptools_openapi_generator = "setuptools_openapi_generator.integration:generate_clients"
 
 [project.urls]
-GitHub = "https://github.com/garryod/setuptools_openapi_generator"
+GitHub = "https://github.com/DiamondLightSource/setuptools_openapi_generator"
 
 [[project.authors]] # Further authors may be added by duplicating this section
 email = "garry.o'donnell@diamond.ac.uk"

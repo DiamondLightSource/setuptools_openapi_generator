@@ -8,8 +8,8 @@ allowing for easy use of the API with static type checking.
 
 ============== ==============================================================
 PyPI           ``pip install setuptools_openapi_generator``
-Source code    https://github.com/garryod/setuptools_openapi_generator
-Releases       https://github.com/garryod/setuptools_openapi_generator/releases
+Source code    https://github.com/DiamondLightSource/setuptools_openapi_generator
+Releases       https://github.com/DiamondLightSource/setuptools_openapi_generator/releases
 ============== ==============================================================
 
 To generate an API client in your project, simply add :code:`setuptools_openapi_generator`
@@ -32,12 +32,12 @@ Client generation can be configured via a :code:`tool` entry in the :code:`pypro
 The above example will generate two API clients, at :code:`src/sample_project/apis/link_example`
 and :code:`src/sample_project/apis/petstore` respectively.
 
-.. |code_ci| image:: https://github.com/garryod/setuptools_openapi_generator/actions/workflows/code.yml/badge.svg?branch=main
-    :target: https://github.com/garryod/setuptools_openapi_generator/actions/workflows/code.yml
+.. |code_ci| image:: https://github.com/DiamondLightSource/setuptools_openapi_generator/actions/workflows/code.yml/badge.svg?branch=main
+    :target: https://github.com/DiamondLightSource/setuptools_openapi_generator/actions/workflows/code.yml
     :alt: Code CI
 
-.. |coverage| image:: https://codecov.io/gh/garryod/setuptools_openapi_generator/branch/main/graph/badge.svg
-    :target: https://codecov.io/gh/garryod/setuptools_openapi_generator
+.. |coverage| image:: https://codecov.io/gh/DiamondLightSource/setuptools_openapi_generator/branch/main/graph/badge.svg
+    :target: https://codecov.io/gh/DiamondLightSource/setuptools_openapi_generator
     :alt: Test Coverage
 
 .. |pypi_version| image:: https://img.shields.io/pypi/v/setuptools_openapi_generator.svg
