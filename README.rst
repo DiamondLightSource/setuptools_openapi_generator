@@ -20,8 +20,10 @@ Client generation can be configured via a :code:`tool` entry in the :code:`pypro
 
 .. code-block:: toml
 
+    [build-system]
+    requires = ["setuptools", "setuptools_openapi_generator"]
+
     [tool.setuptools_openapi_generator]
-    library = "httpx"
     basedir = "src/sample_project/apis/"
     sources = [
         "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/link-example.json",

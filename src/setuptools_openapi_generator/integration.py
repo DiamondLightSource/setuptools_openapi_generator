@@ -1,25 +1,30 @@
+from os import makedirs
 from pathlib import Path
-from typing import List
+from shutil import rmtree
+from typing import List, Sequence
 
-from openapi_python_generator.generate_data import generate_data
+from openapi_python_client.parser.errors import GeneratorError
 from setuptools import Distribution
 
 from setuptools_openapi_generator.config import Configuration
-from setuptools_openapi_generator.utils import clean_name, get_name
+from setuptools_openapi_generator.generator import Generator
 
 
 def _generate_clients(configuration: Configuration):
     generated_apis: List[str] = list()
+    if configuration.basedir.is_dir():
+        rmtree(configuration.basedir)
+    makedirs(configuration.basedir)
     for source in sorted(configuration.sources):
-        module_name = clean_name(get_name(source))
-        generate_data(
-            source,
-            configuration.basedir.joinpath(module_name),
-            configuration.library,
-        )
-        generated_apis.append(module_name)
+        generator = Generator.from_source_and_dir(source, configuration.basedir)
+        if isinstance(generator, GeneratorError):
+            continue
+        name_or_errors = generator.build()
+        if isinstance(name_or_errors, Sequence):
+            continue
+        generated_apis.append(name_or_errors)
     with open(configuration.basedir.joinpath("__init__.py"), "w+") as init_file:
-        init_file.writelines(f"from {api} import *\n" for api in generated_apis)
+        init_file.writelines(f"import {api}\n" for api in generated_apis)
 
 
 def generate_clients(distribution: Distribution):

@@ -2,7 +2,6 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, Set
 
-from openapi_python_generator.common import HTTPLibrary
 from pydantic import BaseModel
 
 
@@ -22,7 +21,6 @@ def lazy_toml_load(data: str) -> Dict[str, Any]:
 
 
 class Configuration(BaseModel):
-    library: HTTPLibrary
     basedir: Path
     sources: Set[str]
 

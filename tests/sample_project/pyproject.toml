@@ -12,7 +12,6 @@ name = "sample_project"
 dynamic = ["version"]
 
 [tool.setuptools_openapi_generator]
-library = "httpx"
 basedir = "src/sample_project/apis/"
 sources = [
     "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/link-example.json",
